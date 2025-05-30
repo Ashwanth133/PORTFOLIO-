@@ -21,7 +21,7 @@ body{
   font-family: 'Lexend', sans-serif;
   font-size:16px;
   line-height:24px; 
-  background-color:#17252A;                                            /*------------------------------------------------------------------------------------------------------*/
+  background-color:#181f24;                                            /*------------------------------------------------------------------------------------------------------*/
 
 }
 .container{
@@ -45,7 +45,7 @@ body{
   left: 0;
   width: 100%;
   z-index: 99;
-  background-color: #17252ad9;
+  background-color: #181f24d4;
   padding: 5px;
 }
 
@@ -95,12 +95,27 @@ body{
 .header ul li a{
   text-transform: capitalize;
   display: block;
+  text-decoration: none;
+  color: #d5d5d5;
+  position: relative;
+  transition: all 0.3s ease;
 }
-.header ul li a.active{
+.header ul li a::after{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 2px;
+  background-color: yellow;
   color: #fed700;
+  transition: width 0.3s ease;
 } 
 .header ul li a:hover{
   color:#fed700;
+}
+.header ul li a:hover::after{
+  width: 100%;
 }
 .header .menu_icon{
   color:#fff;
@@ -128,7 +143,7 @@ body{
   height:  300px;
   border-radius: 50%;
   overflow: hidden;
-  border: 15px solid #394b58;
+  border: 15px solid #181f24;
   box-shadow: 5px 7px 25px rgba(0, 0, 0, 0.5)
 }
 profile-photo .img{
@@ -172,7 +187,7 @@ profile-photo .img{
 
 .about-area{
   padding-top: 130px;
-  background-color: #8de8e3b5;                 /*------------------------------------------------------------------------------------------------------*/
+  background-color: #181f24;                 /*------------------------------------------------------------------------------------------------------*/
 }
 .about{
   display: flex;
@@ -235,6 +250,10 @@ profile-photo .img{
 .btn.active{
   border-color: #fed700;
 }
+.btn:hover{
+  border-color: #fed700;
+  
+}
 
 
 /*---------------------------Education & Internship---------------------------*/
@@ -245,7 +264,9 @@ profile-photo .img{
   height: 400px;
   margin-bottom: 250px;
 }
-
+#education{
+  background-color: #181f24;
+}
 .education-content .title{
   color: #fed700;
 }
@@ -253,9 +274,11 @@ profile-photo .img{
 .education-content .row .internship
 {
   color: #e5e5e5;
-  flex:0 0 50%;
-  max-width: 50%;
+  flex:0 0 60%;
+  height: 400px;
+  max-width: 34%;
   margin-top: 30px;
+  padding-left: 65px;
 } 
 .education-content  h3.title{
   font-size:24px;
@@ -265,9 +288,10 @@ profile-photo .img{
 .education-content .row.timeline-box{
   flex:0 0 100%;
   max-width: 100%;  
+  
 }
 .education-content .row .timeline{
-  /* background-color:#e5e5e5; */
+  background-color:#21282cae; 
   padding: 30px 15px;
   border: 1px solid #e5e5e5;
   border-radius: 10px;
@@ -276,12 +300,12 @@ profile-photo .img{
 }
 .education-content .row .timeline-item{
   position:relative;
-  padding-left: 37px;
+  padding-left: 30px;
   padding-bottom: 50px; 
 }
 .education-content .row  .internship .timeline-item{
   position:relative;
-  padding-left: 37px;
+  padding-left: 30px;
   padding-bottom: 30px; 
 }
 .education-content .row .timeline-item:last-child{
@@ -325,6 +349,9 @@ profile-photo .img{
 
 /*---------------------------Projects---------------------------*/
 .project-content{
+  background-color: #181f24; 
+}
+.project-content{
   padding: 90px 0;
   /* color:#fff;  */
 }
@@ -351,13 +378,21 @@ profile-photo .img{
     /* padding: 30px 15px; */
     color: #e5e5e5;
     border: 2px solid #e5e5e5;
-    border-radius: 10px;
+    border-radius: 20px;
     width: 100%;
     position: relative;
     padding: 25px;
     text-align: center;
     flex-basis: 32%;
-    transition: .3s;
+    box-shadow: 4px 4px 8px rgba(0,0,0,0.2);
+    transition: box-shadow 0.3s ease-in-out,transform 0.3 ease-in-out;
+    transform: scale(1);
+    will-change: transform, box-shadow;
+}
+.project:hover{
+  box-shadow: 0px 0px 20px rgba(255,255,0,0.7);
+  transform: scale(1.07);
+
 }
 .project i{
   background-color: #fed700;
@@ -383,6 +418,22 @@ profile-photo .img{
 
 
 /*---------------------------Contact Me---------------------------*/
+.inp{
+  border-radius: 8px;
+  padding: 12px;
+  border: 2px solid #e5e5e5;
+  background-color: #1a1a1a;
+  color: #e5e5e5;
+  font-size: 16px;
+  width: 100px;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.5 ease,transform 0.5 ease;
+  outline: none;
+}
+.inp:focus{
+  box-shadow: 0 0 20px rgba(255,255,0,0.7);
+  transform: scale(1);
+}
 .contact-content{
   padding: 100px 0;
   color: #fff;
@@ -414,10 +465,14 @@ profile-photo .img{
   padding: 10px 40px;
   font-weight:bold ;
   font-size: 18px;
+  border-radius: 8px;
 }
 .contact .submit:hover{
-  transform: scale(1.1);
+  transform: scale(1.05);
   cursor: pointer;
+  box-shadow: 0 0 20px rgb(255,255,0, 0.7);
+  
+
 }
 #msg{
   color: #fff;
@@ -452,6 +507,9 @@ profile-photo .img{
   .copyright {
     font-size: 12px;
   }
+
+
+
 
 
 
